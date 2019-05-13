@@ -12,7 +12,7 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "env BROWSER='C:\\Program Files (x86)\\Google\\Chrome\\Application\\Google Chrome' react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
