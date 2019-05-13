@@ -92,7 +92,8 @@ class App extends Component {
       })
         .then(response => response.json())
         .then(response => {
-          if (response) {
+          console.log(response);
+          if (response && response.outputs) {
             fetch("https://facerecognitionapirad.herokuapp.com/image", {
               method: "put",
               headers: { "Content-Type": "application/json" },
@@ -105,8 +106,14 @@ class App extends Component {
                 );
               })
               .catch(console.log); // this is the same as .catch(err => console.log (err))
+            this.displayFaceBox(this.calculateFaceLocation(response));
+          } else {
+            this.setState({
+              input: "",
+              imageUrl: "",
+              box: []
+            }); // since we only want to change 1 property of the object but we want to keep the rest we have to use Object.assing to make a copy of the user object with the updated entry
           }
-          this.displayFaceBox(this.calculateFaceLocation(response));
         })
         .catch(err => console.log(err));
     });
