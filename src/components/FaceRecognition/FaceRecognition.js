@@ -13,6 +13,7 @@ const FaceRecognition = ({ imageUrl, box }) => {
           width="500px"
           height="auto" // will fit the height to preserve the aspect ratio considering the width
         />
+
         {box.map((element, elementInex) => {
           return <FaceBox element={element} key={elementInex} />;
         })}

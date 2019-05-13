@@ -92,7 +92,6 @@ class App extends Component {
       })
         .then(response => response.json())
         .then(response => {
-          console.log(response);
           if (response && response.outputs) {
             fetch("https://facerecognitionapirad.herokuapp.com/image", {
               method: "put",
